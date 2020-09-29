@@ -60,19 +60,21 @@ public class Game {
 		int step = 0;
 		userIf.start();
 		while (true) {
-			if (step == size * size) {
-				userIf.draw();
-				return;
-			}
 			for (Player player : players) {
+				if (step == size * size) {
+					userIf.draw();
+					return;
+				}
 				this.currentPlayer = player;
 				userIf.playerInput();
+				step ++;
 				userIf.display();
 				if (player.wins()) {
 					userIf.win();
 					return;
 				}
 			}
+			
 		}
 	}
 	public boolean isEmpty(int row,int column) throws GameException

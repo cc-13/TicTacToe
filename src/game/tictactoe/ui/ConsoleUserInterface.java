@@ -12,7 +12,7 @@ public class ConsoleUserInterface implements UserInterface {
 	private final static String[] playerMark = {"  X  ","  O  "};
 	private final static String INPUT_PATTERN="Input invalid. Please re-enter [1-%d]";
 	private final static String REENTER_POSITION="The position has already been taken. Please re-enter";
-	private final static String SPLIT_ROW="-----------------";
+	private final static String SPLIT_ROW=" ";
 	private final static String SPLIT_COL="|";
 	private final static String WELCOME="WELCOME to The TIC-TAC-TOE";
 	
@@ -68,7 +68,6 @@ public class ConsoleUserInterface implements UserInterface {
 			do {
 				try {
 					String input = scan.next();
-					System.out.println(input);
 					int value = Integer.parseInt(input);
 					if (value < 0 || value > limit) {
 						System.out.println(String.format(INPUT_PATTERN, limit));
@@ -87,9 +86,9 @@ public class ConsoleUserInterface implements UserInterface {
 				try 
 				{
 					System.out.println(" Wait for " + game.getCurrentPlayer().getLabel() + "'s input.");
-					System.out.println(" Row:");
+					System.out.print(" Row:");
 					int row = getInputInteger(game.getSize());
-					System.out.println(" Column:");
+					System.out.print(" Column:");
 					int column = getInputInteger(game.getSize());
 					if (game.isEmpty(row, column)) {
 						game.getCurrentPlayer().set(row, column);
