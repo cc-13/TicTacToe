@@ -4,6 +4,7 @@
 
 A simple implementation of Tic Tac Toe.
 
+( A new version is available at https://github.com/cc-13/TicTacToeV2 )
 ## How to run it
 To build the application JDK 1.8 and Maven is required.
 Make sure environment variables JAVA_HOME and PATH are set properly.
